@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>17.03.</title>
+		<style type="text/css">
+		/* 과제
+			homepage에 메뉴 구성을 하려할 때,
+			
+			home	인사 	총무 	자재관리 		관리자
+			
+			이렇게 처리하려 한다. 초기에 클릭하는 순간 css 글자와 배경 색생을 다르게 처리.
+			임의의 페이지로 이동하는 link를 매핑. 메뉴항목은 radius를 활용하여 둥근모양의
+			list가 나오게 처리
+		*/
+		</style>
+		<script type="text/javascript">
+		/*
+		
+		*/
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
