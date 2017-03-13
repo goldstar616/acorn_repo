@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+  /*
+  확인예제..
+  직급에 따라 보너스를 다르게 처리하는 프로그램을 만들려고 한다.
+  입력값 prompt 직급 : 사장, 이사, 부장, 차장, 과장, 대리, 사원
+                        보너스 : 0%, 10%, 30%, 25%, 20%, 15%, 10%
+                        직급에 해당하지 않는 데이터 : 잘못된 데이터 입력입니다.
+                        null이거나, 공백일 때 : 직급을 입력하셔야 합니다.
+  초기 메시지 : 직급을 입력하세요..
+  출력 내용 : 직급은 @@@ 이고, 보너스는 @@%입니다.
+  */
+  var position = prompt("직급을 입력하세요..", "");
+  if(position==null || position==""){
+      alert("직급을 입력하셔야 합니다.");
+  } else {
+          var resultMsg = "직급은 "+position+"이고,";
+          if(position=="사장"){
+              resultMsg+= " 보너스는 0%입니다.";
+          } else if(position=="이사"){
+              resultMsg+= " 보너스는 10%입니다.";
+          } else if(position=="부장"){
+              resultMsg+= " 보너스는 30%입니다.";
+          } else if(position=="차장"){
+              resultMsg+= " 보너스는 25%입니다.";
+          } else if(position=="과장"){
+              resultMsg+= " 보너스는 20%입니다.";
+          } else if(position=="대리"){
+              resultMsg+= " 보너스는 15%입니다.";
+          } else if(position=="사원"){ 
+              resultMsg+= " 보너스는 10%입니다.";
+          } else {
+              resultMsg = "잘못된 데이터 입력입니다.";
+          }
+          alert(resultMsg);
+  }
+  </script>
+ </head>
+ <body>
+
+ </body>
+</html>

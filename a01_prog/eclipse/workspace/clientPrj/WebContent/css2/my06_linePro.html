@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 
+css 속성, line속성..
+block: 태그중에서 줄바꿈 속성을 함께 가지고 있는 것..
+	ex) h1, p
+inline: 태그중에 줄바꿈 속성이 없어서, 태그를 쭉 나열하면
+	나열된 내용이 나타난다.
+	ex) font, input
+	
+css에서 기본속성을 변경가능
+	inline, block
+display:inline; 해당내용이 나열될 때, 줄바꿈 처리를 하지 않음
+display:block; 해당내용이 나열될 때, 줄바꿈 처리
+
+ex) 예제.
+id값이 box인 객체를 줄바꿈 처리가 가능하게 처리한다..
+ */
+ #box{
+ 	display:inline;
+ 	background-color:yellow;
+ 	width:300px;height:50px;
+ 	margin:10px;
+ }
+ 
+</style>
+</head>
+<body>
+	<span>안녕1</span>
+	<div id="box">
+		<span>여기에 있는 내용은 inline일까요?</span> 
+		<span>block일까요?</span>
+	</div>
+	<span>안녕2</span>
+	<h1>block속성을 가진자!!1</h1>
+	<h1>block속성을 가진자!!2</h1>
+	<p>block속성을 가진자!!3</p>
+	<p>block속성을 가진자!!4</p>
+	<ul>
+		<li>block속성을 가진자!!5</li>
+		<li>block속성을 가진자!!6</li>
+		<li>block속성을 가진자!!7</li>
+	</ul>
+	
+	<font>inline속성을 가진자1</font>
+	<font>inline속성을 가진자2</font>
+	<font>inline속성을 가진자3</font>
+	<input value="inline속성을 가진자4"/>
+	<input value="inline속성을 가진자5"/>
+	<input value="inline속성을 가진자6"/>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+  /*
+  확인예제..
+  놀이공원에 가서...
+  나이를 입력하세요..prompt
+  ==> 예외에 대한 처리.. 입력범위나, null, 공백처리.
+    ==> 유효한 입력이 아닙니다.
+  0~4미만 : 무료
+  4이상 8미만 : 50%할인, 50% ==> 할인금액 : 원금 * 0.5
+                                                 총금액 : 원금 - 할인금액
+  8이상 18미만 : 30%할인, 30% ==> 원금 * 0.3
+  18이상 65미만 : 할인 없음.
+  65이상 : 무료
+  입장료 50000원.
+  입장료가 할인율인 @@@% 적용되어 @@@@원 입니다.
+  */
+  var inputAge = prompt("나이를 입력하세요..", "0");
+  var price = 50000;
+  var discount = 0;
+  var resultMsg = "유효한 입력이 아닙니다.";
+  if(inputAge == null || isNaN(inputAge)){
+
+  } else if(inputAge < 0 || inputAge >= 100){
+
+  } else {
+      if(inputAge >=0 && inputAge < 4){
+              discount = 100;
+          } else if(inputAge >=4 && inputAge < 8){
+              discount = 50;
+          } else if(inputAge >=8 && inputAge < 18){
+              discount = 30;
+          } else if(inputAge >=18 && inputAge < 65){
+              discount = 0;
+          } else if(inputAge >=65 && inputAge < 100){
+              discount = 100;
+          }
+          price -= price * (discount/100);
+          resultMsg = "입장료가 할인율인 "+discount+"% 적용되어 "+
+                             price+"원 입니다.";
+  }
+  alert(resultMsg);
+
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

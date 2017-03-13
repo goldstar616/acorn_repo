@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+  /*
+  응용예제
+    좋아하는 인물 3명을 입력하여,
+    for in 구문으로 아래와 같은 형식으로 출력하세요!! alert
+        좋아하는 인물 Rank3
+        1. @@@
+        2. @@@
+        3. @@@
+  */
+  var likePerson=[];
+  for (var cnt=1;cnt<=3 ;cnt++ )
+  {
+      likePerson[cnt-1]=prompt(cnt"번째 좋아하는 인물","인물");
+  }
+  var show="좋아하는 인물 Rank3"
+  var cnt=1;
+  for (var personIdx in likePerson)
+  {
+      show+="\n"+(cnt++)+". "+likePerson[personIdx];
+  }
+  alert(show);
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

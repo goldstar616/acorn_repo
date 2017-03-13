@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+  /*
+  월을 입력하고, 해당 월에 날짜수를 출력하는 프로그램을
+  switch case문으로 처리하세요.
+  2017년도 월별 날짜 확인
+  입력한 월:@@@
+  날짜수:@@@
+  */
+  var inputMonth = prompt("월을 입력하세요.", "0");
+  var dayCnt = -1;
+  switch(inputMonth){
+      case "1":
+      case "3":
+      case "5":
+      case "7":
+      case "8":
+      case "10":
+      case "12": dayCnt = 31; break;
+      case "4":
+      case "6":
+      case "9":
+      case "11": dayCnt = 30; break;
+      case "2": dayCnt = 28; break;
+      default: 
+  }
+  if(dayCnt < 0){
+      alert("잘못된 입력값입니다.");
+  }else{
+      alert("2017년도 월별 날짜 확인\n"+
+              "입력한 월:"+inputMonth+"\n"+
+              "날짜수:"+dayCnt);
+  }
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

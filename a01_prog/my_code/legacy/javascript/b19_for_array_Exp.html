@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <script>
+  /*
+  확인예제...
+  마트에가서..
+  사야 할 물건 갯수를 prompt 입력받음. parseInt활용
+  for문 활용해서 한계치부분을 입력받은 물건갯수를 setting
+  @@@번째 구매한 물건 @@@ 입력처리..prompt
+  마지막 물건명을 입력하면 구매완료 alert 창이 나타남..
+
+  출력내용.
+  총 구매한 물건 갯수 : @@@
+  구매한 물건 list
+  @@@@
+  @@@
+  @@
+  */
+  var cnt = parseInt(prompt("사야 할 물건 갯수","1"));
+  var show="";
+  if(cnt==null || isNaN(cnt) || cnt<=0 || cnt>100)
+  {
+      alert("잘못된 입력값");
+  }
+  else
+  {
+      show+="총 구매한 물건 갯수 : "+cnt+"\n구매한 물건 list\n";
+      var item=[];
+      for (var idx=0;idx<cnt ;idx++ )
+      {
+          item[idx]=prompt((idx+1)+"번째 구매한 물건 입력", "물건");
+          show+= item[idx]+"\n";
+      }
+  }
+  alert(show);
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
