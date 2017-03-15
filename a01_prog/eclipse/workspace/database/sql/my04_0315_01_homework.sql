@@ -39,5 +39,5 @@ where substr(job, (length(job) + 1) - 3 , 3) = 'MAN';
 숙제
 입사월이 12월인 데이터를 이름과 입사일을 출력하세요 instr()을 활용 
 */
-select ename, hiredate from emp
+select ename, substr(hiredate, (length(hiredate) + 1) - 2, 2) from emp
 where instr(hiredate, '12', 3, 1) = 4;
