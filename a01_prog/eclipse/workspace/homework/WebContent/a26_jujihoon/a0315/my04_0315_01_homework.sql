@@ -23,7 +23,7 @@ select empno, ename, sal, trunc(sal + 1000, -3)/100 as bonus, sal * ((trunc(sal 
 으로 나누고 다음과 같이 출력하세요.
 부서번호 사원번호 이름 팀명 
 */
-select deptno, empno, ename, (mod(deptno/10, 2) + 1)||'팀' from emp; 
+select deptno, empno, ename, (mod((mod(deptno/10, 2) + 1), 2) + 1)||'팀' from emp; 
 
 -- 과제) 함수를 이용하여 다음 내용을 출력하세요..
 -- @@@님 입사일은 @@년 @@월 @@일 이며, 현재 연봉은 @@@ 만원 받고 있습니다.

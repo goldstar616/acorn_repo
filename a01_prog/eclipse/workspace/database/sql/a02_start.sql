@@ -1,4 +1,5 @@
 -- 컬럼명에 이름(별명) 붙이기!!
+
 select * from emp;
 -- empno를 별칭으로 companyNo로 쓰기로 했다. 출력하세요..
 -- 컬럼명 as 나타날 별칭컬럼명 alias
