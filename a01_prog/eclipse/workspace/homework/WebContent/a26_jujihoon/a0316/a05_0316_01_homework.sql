@@ -27,7 +27,13 @@ select ename, hiredate,
 	1/3 = 30%, 1/3 = 20%, 1/3 = 10% (연봉기준)
 	사원, 입사일, 현재날짜(@@/@@/@@ AM @@시 @@분 @@초), 근무개월수,
 */
-select ename, hiredate, to_char(sysdate, 'YY/MM/DD AM HH24:MI:SS') , trunc((sysdate - hiredate)/365) from emp;
+select ename, hiredate, to_char(sysdate, 'YY/MM/DD AM HH24:MI:SS') , trunc((sysdate - hiredate)/30), 
+	case when (trunc((sysdate - hiredate)/30) - 416) / 8 <= 1 then sal*0.1  
+		when (trunc((sysdate - hiredate)/30) - 416) / 8 <= 2 then sal*0.2
+		when (trunc((sysdate - hiredate)/30) - 416) / 8 > 2 then sal*0.3
+		else 0
+	end result
+from emp;
 
 /*
 숙제
