@@ -42,6 +42,29 @@ decode를 활용해서,
 	 5000 ~ 6000 미만 A등급  성과급 2%
 이름  부서  연봉  연봉등급  성과급  총액(연봉+성과급)
 */
+SELECT ename, deptno, sal, 
+	decode(trunc(sal/1000),0,'F등급',
+	                       1,'E등급',
+						   2,'D등급',
+						   3,'C등급',
+						   4,'B등급',
+						   5,'A등급',
+						   '기타등급') "연봉등급",
+	decode(trunc(sal/1000),0,round(sal*0.03)||'(3%)',
+	                       1,round(sal*0.05)||'(5%)',
+						   2,round(sal*0.07)||'(7%)',
+						   3,round(sal*0.04)||'(4%)',
+						   4,round(sal*0.03)||'(3%)',
+						   5,round(sal*0.02)||'(2%)',
+						   '기타등급') "성과급"	,
+	decode(trunc(sal/1000),0,sal+round(sal*0.03),
+	                       1,sal+round(sal*0.05),
+						   2,sal+round(sal*0.07),
+						   3,sal+round(sal*0.04),
+						   4,sal+round(sal*0.03),
+						   5,sal+round(sal*0.02),
+						   '기타등급') "총액(연봉+성과급)"							   					    
+from emp;
 /*
 case 함수 :조건에 따라 서로 다른 처리가 가능
 CASE WHEN 조건1(비교연산자) THEN 처리할데이터
@@ -72,3 +95,7 @@ FROM EMP;
  사원번호, 이름, 입사(년/월), 입사분기
 
 */		
+SELECT empno, ename, to_char(hiredate,'YY/MM') "입사", 
+	trunc(to_number(to_char(hiredate,'MM'))/4)+1||'/4' "입사분기"
+  FROM EMP;
+select * from emp;

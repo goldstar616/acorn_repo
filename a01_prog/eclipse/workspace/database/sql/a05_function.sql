@@ -166,7 +166,17 @@ ex)	현재시간을 날짜와 시간 형식에 의해 표시
 	가장 오래된 개월~가장 최근에 입사한 개월수
 	1/3 = 30%, 1/3 = 20%, 1/3 = 10% (연봉기준)
 	사원, 입사일, 현재날짜(@@/@@/@@ AM @@시 @@분 @@ 초), 근무개월수, 보너스
+25/3 ==>8.33  410~434 
+
 */	
+select 25/3 from emp;
+select ename, hiredate, 
+	to_char(sysdate,'YY/MM/DD AM HH24"시" MM"분" SS"초"') today,
+ floor(months_between(sysdate,hiredate )) workMonth,
+  floor(months_between(sysdate,hiredate ))-410 bonusKey,
+  (floor((floor(months_between(sysdate,hiredate ))-410)/8.33)+1)*10||'%' bonusKey2,
+  round(sal*((floor((floor(months_between(sysdate,hiredate ))-410)/8.33)+1)/100)) bonus
+ from emp;
 select * from emp;
 /*
 숫자형을 문자형 처리..
@@ -226,6 +236,16 @@ list형식
 	입사일(@@년 @@월 @@일 @요일 24시 @@분 @@초 )
 	연봉( ####1,600.0 표시)  로 나타내세요..
 */
+select lpad(ename,10,'#') "사원명",
+	   rpad(job,10,'-') "직책",
+	   to_char(hiredate,'YY"년" MM"월" DD"일" DAY HH24"시" MI"분" SS"초"') "입사일",
+	   lpad(ltrim(to_char(sal,'9,999.9')),12,'#') "연봉", deptno
+from emp
+where hiredate between 
+		to_date('1981년01월01일','YYYY"년"MM"월"DD"일"') AND
+		to_date('1982년12월12일','YYYY"년"MM"월"DD"일"')
+	AND DEPTNO = 30;
+
 /*
 숫자형 문자열이 입력되었을 때, 처리할 to_number() 함수
 입력되는 문자열의 형식을 지정, to_number로 데이터 입력 처리..
@@ -253,8 +273,11 @@ select ename, sal, comm,  sal+nvl(comm,0) tot
 from emp;
 select * from emp;
 -- 숙제
---  이름  관리자번호    보너스   ==> 데이터가 없을 때는  관리자번호경우 '최고레벨',
+--  이름  관리자번호    보너스   
+-- ==> 데이터가 없을 때는  관리자번호경우 '최고레벨',
 --  보너스는 '0'표시
+select ename, nvl(to_char(mgr),'최고레벨') mgr,
+ nvl(comm,'0') comm from emp;
 
 
 

@@ -9,3 +9,4 @@ min() : ÃÖ¼Ò°ª
 select sum(sal) tot, avg(sal) avg01, count(sal) cnt,
 		max(sal) max01, min(sal) min01
 from emp;
+

@@ -4,62 +4,82 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	#containerWhite{width:100%; height:760px; display: inline;}
-	#blockWhite{width:1000px;height:760px; margin: auto;}
-
-	#containerBlue{width: 100%; height:400px; display: inline;}
-	#blockBlue{width:1000px;height:400px; margin: auto;}
-	
-	@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);	
-	#home{width: 20%; height: 100px; float: left;}
-	#homeText{margin-top: 20px; margin-left: 10px; font-family: 'Hanna', serif;}
-	
-	#homeBlock{width: 80%; height: 100px; float: right;}
-	
-	/* @import url(http://fonts.googleapis.com/earlyaccess/hanna.css); */	
-	#home{width: 20%; height: 100px; float: left;}
-	#homeText{margin-top: 20px; margin-left: 10px; font-family: 'Hanna', serif;}
-	
-	#homeBlock{width: 80%; height: 100px; float: right;}
-	
+	@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+	/* font-family: 'Hanna', serif; */
 	@import url('https://fonts.googleapis.com/css?family=Anton');
+	/* font-family: 'Anton', sans-serif; */
+	
+	.container{width: 100%; display: inline-block;}
+	.block{width: 1000px; margin: auto;}
+	
+	.whiteHeight{height: 760px;}
+	.blueHeight{height:300px;}
+
+	.bgBlue{background-color: #46BCFF;}
+	
+		
+	#home{width: 20%; height: 100px; float: left;}
+	#homeText{margin-top: 20px; margin-left: 10px; font-family: 'Hanna', serif;}
+	#homeBlock{width: 80%; height: 100px; float: right;}
+	
+	
 	#name{width: 65%; height: 250px; float: left;}
-	#nameLast{margin-top: 20px; margin-bottom:0px; font-family: 'Anton';
+	#nameLast{margin-top: 20px; margin-bottom:0px; font-family: 'Anton', sans-serif;
 				font-size: 85px; line-height:100%; color: #4FBFFF}
-	#nameFirst{margin-top: 0px; font-family: 'Anton';
+	#nameFirst{margin-top: 0px; font-family: 'Anton', sans-serif;
 				font-size: 120px; color: #4FBFFF}
 	
-	/* @import url('https://fonts.googleapis.com/css?family=Anton'); */
+	
 	#tag{width: 65%; height: 150px; float: left;}
-	#tagList{margin-top: 0px; font-family: 'Anton';
+	#tagList{margin-top: 0px; font-family: 'Anton', sans-serif;
 				color: #838383}
+	
 	
 	#img{width: 35%; height: 400px; float: right;}
 	#imgFile{width: 300px; height: 300px; border-radius: 50%;}
 	
+	
 	#intro{width: 20%; height: 250px; float: left;}
-	#whoIAm{font-size:20px; font-family: 'Anton'; border-radius: 50%; margin-top: 20px;
-			width:175px; height:175px; background-color: #46BCFF; font-weight: bold; color: white;
+	#whoIAm{font-size:20px; font-family: 'Anton', sans-serif; border-radius: 50%; margin-top: 20px;
+			width:175px; height:175px; background-color: #46BCFF; color: white;
 			display: flex; align-items: center; justify-content: center;}
-			
 	#introContent{width: 80%; height: 250px; float: right;}
 	
-	/*  */
-	#contactBlock{width: 70%; height: 200px; float: left;}
-	#contact{width: 30%; height: 200px; float: right;}
-	#contactName{width: 50%; height: 50px; float: left;}
-	#contactEmail{width: 50%; height: 50px; float: left;}
-	#contactTitle{width: 50%; height: 50px; float: left;}
+
+	#contactBlock{width: 70%; height: 100px; float: left;}
+	#contact{width: 30%; height: 100px; float: right;}
+	#contactHeader{font-size:40px; font-family: 'Anton', sans-serif; margin-top: 20px; 
+					font-weight: bold; color: white; float: right;}
+	
+	
+	.contactInput{width: 95%; height: 95%; padding-left: 10px; float: right;}
+	.contactInputDiv{width: 50%; height: 50px; float: left;}
+	
+	
 	#contactContent{width: 50%; height: 150px; float: right;}
+	#contactContentText{padding-top: 10px;}
+	
 	#contactSendBlock{width: 90%; height: 50px; float: left;}
 	#contactSend{width: 10%; height: 50px; float: right;}
-	
-	.bgBlue{background-color: #46BCFF;}
+	#contactSendButton{float:right; background-color: gray;color: white;border: 0px;
+						width: 50px;height: 30px;margin-top: 10px;}
+
 </style>
+<script type="text/javascript">
+	function sendMail() {
+	    var link = "mailto:" + document.getElementById('contactName').value + "<datajihoon@naver.com>"
+	    		+ "?cc=" + document.getElementById('contactEmail').value
+	    		+ "&subject=" + document.getElementById('contactTitle').value
+	             + "&body=" + escape(document.getElementById('contactContentText').value)
+	    ;
+	
+	    window.location.href = link;
+	}
+</script>
 </head>
 <body>
-	<div id="containerWhite">
-		<div id="blockWhite">
+	<div class="container whiteHeight">
+		<div class="block whiteHeight">
 			<div id="home" class="bgBlue">
 				<h6 id="homeText">HOME</h6>
 			</div>
@@ -89,16 +109,28 @@
 		</div>
 	</div>
 	
-	<div id="containerBlue">
-		<div id="blockBlue" class="bgBlue">
-			<div id="contactBlock" class="bgBlue">공란</div>
-			<div id="contact" class="bgBlue">contact</div>
-			<div id="contactName" class="bgBlue">contactName</div>
-			<div id="contactContent" class="bgBlue">contactContent</div>
-			<div id="contactEmail" class="bgBlue">contactEmail</div>
-			<div id="contactTitle" class="bgBlue">contactTitle</div>
-			<div id="contactSendBlock" class="bgBlue">공란</div>
-			<div id="contactSend" class="bgBlue">contactSend</div>
+	<div class="container blueHeight bgBlue">
+		<div class="block blueHeight bgBlue">
+			<div id="contactBlock" class="bgBlue"></div>
+			<div id="contact" class="bgBlue">
+				<h5 id="contactHeader">CONTACT ME</h5>
+			</div>
+			<div class="contactInputDiv bgBlue">
+				<input id="contactName" class="contactInput" type="text" placeholder="이름"/>
+			</div>
+			<div id="contactContent" class="bgBlue">
+				<textarea id="contactContentText" class="contactInput" placeholder="메시지"></textarea>
+			</div>
+			<div class="contactInputDiv bgBlue">
+				<input id="contactEmail" class="contactInput" type="text" placeholder="이메일"/>
+			</div>
+			<div class="contactInputDiv bgBlue">
+				<input id="contactTitle" class="contactInput" type="text" placeholder="제목"/>
+			</div>
+			<div id="contactSendBlock" class="bgBlue"></div>
+			<div id="contactSend" class="bgBlue">
+				<input id="contactSendButton" type="button" value="Send" onclick="sendMail()">
+			</div>
 		</div>
 	</div>
 </body>
