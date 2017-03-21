@@ -67,10 +67,11 @@
 </style>
 <script type="text/javascript">
 	function sendMail() {
-	    var link = "mailto:" + document.getElementById('contactName').value + "<datajihoon@naver.com>"
-	    		+ "?cc=" + document.getElementById('contactEmail').value
-	    		+ "&subject=" + document.getElementById('contactTitle').value
-	             + "&body=" + escape(document.getElementById('contactContentText').value)
+	    var link = "mailto:" + "주지훈" + "<datajihoon@naver.com>"
+	    		+ "?subject=" + document.getElementById('contactTitle').value
+	             + "&body=" + document.getElementById('contactContentText').value
+	             + escape("\n") + "보낸 분 이름 : " + document.getElementById('contactName').value
+	             + escape("\n") + "보낸 분 메일 : " + document.getElementById('contactEmail').value
 	    ;
 	
 	    window.location.href = link;
