@@ -1,4 +1,4 @@
-/*
+/* z02_sql_basic.sql
 DDL :data definition language
 테이블 구조 생성, 변경 및 삭제하는 것을 말한다.
 크게..
@@ -35,6 +35,11 @@ DDL :data definition language
 	id@@@ 님 환영합니다. 남은 point는 @@@ 입니다. 라는 내용이 나타난다고 한다.
 	이에 필요로 하는 테이블과 테이블 구조를 만드세요..
 */
+CREATE TABLE LOGIN(
+	ID VARCHAR2(10),
+	PASSWORD VARCHAR2(15),
+	POINT NUMBER
+);
 /*테이블 구조 변경하기.
 1. 테이블의 새로운 컬럼을 추가 할 때 - add column
 2. 테이블에 컬럼을 수정할 때 - modify column
@@ -112,15 +117,3 @@ select * from dept10Exp;
 테이블 구조 삭제
 
 */
-
-
-
-
-
-
-	
-	
-	
-	
-
-

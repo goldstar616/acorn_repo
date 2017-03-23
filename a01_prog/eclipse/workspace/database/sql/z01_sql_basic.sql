@@ -66,13 +66,28 @@ update emp01
        hiredate=sysdate,
 	   deptno=40
 where empno=7935;
-/* 숙제
-emp03 복사테이블 생성
-1. 입력  empno의 가장 작은수보다 -1, mgr:cleark의 mgr입력, sal:평균연봉, 
-   comm:전체comm의 합계
-2. 수정 ename:'신길동', job은 SUPERMAN, hirdate는 최근에 입사일+1
-*/
-select * from  emp;
+--  숙제
+-- emp03 복사테이블 생성
+-- 1. 입력  empno의 가장 작은수보다 -1, mgr: CLERK 의 mgr입력, sal:평균연봉, 
+--    comm:전체comm의 합계
+select min(empno)-1, avg(sal), sum(comm)
+from EMP03; -- 7368, 2073.21, 2200
+select mgr
+from EMP03
+where job='CLERK'; -- 7902, 7788, 7698, 7782
+INSERT INTO EMP03(EMPNO, SAL, COMM, MGR) VALUES( 7368,2073.21,2200,7902);
+INSERT INTO EMP03(EMPNO, SAL, COMM, MGR) VALUES( 7368,2073.21,2200,7788);
+INSERT INTO EMP03(EMPNO, SAL, COMM, MGR) VALUES( 7368,2073.21,2200,7698);
+INSERT INTO EMP03(EMPNO, SAL, COMM, MGR) VALUES( 7368,2073.21,2200,7782);
+SELECT * FROM EMP03;
+-- 2. 수정 ename:'신길동', job은 SUPERMAN, hirdate는 최근에 입사일+1
+SELECT MAX(HIREDATE)+1
+FROM EMP;
+	UPDATE EMP03
+		SET ENAME='신길동',
+		JOB='SUPERMAN',
+		HIREDATE=(SELECT MAX(HIREDATE)+1 FROM EMP03);
+select * from  EMP03;
 /*
 4. delete : 특정 조건의 데이터를 삭제처리하는 구문
 	delete [없음] from 테이블명

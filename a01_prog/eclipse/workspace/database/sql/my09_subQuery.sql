@@ -110,9 +110,6 @@ FROM EMP A, (select empno, ename, trunc((to_number(to_char(hiredate, 'MM'))-1)/3
 WHERE A.EMPNO = B.EMPNO
 GROUP BY B.HQ;
 
-SELECT A.ENAME, B.HQ
-FROM EMP A, (select empno, ename, trunc((to_number(to_char(hiredate, 'MM'))-1)/3) HQ from emp) B
-WHERE A.EMPNO = B.EMPNO;
 /*
 사원 테이블에서 30번 소속 사원들 중에서 급여를 가장 많이 받는 사원 보다
 많은 급여를 받은 사람의 이름과 급여를 출력하세요.

@@ -1,4 +1,4 @@
-/*
+/* z03_sql_constraint.sql
 데이터 무결성 제약 조건?
 데이터의 신뢰성의 확보하기 위하여, 테이블 생성시, 컬럼 속성값으로
 지정하는 것을 말한다.
@@ -65,7 +65,6 @@ CREATE TABLE DEPT_REF
    DNAME    VARCHAR2 (14),
    LOC      VARCHAR2 (13)
 );
-
 CREATE TABLE EMP_REF
 (
    EMPNO      NUMBER (4) primary key,
@@ -80,9 +79,9 @@ CREATE TABLE EMP_REF
 --  컬럼 컬럼TYPE references 참조할테이블명(참조할컬럼명)
 insert into DEPT_REF values(20, '총무','경기');
 select * from DEPT_REF;
-insert into EMP_REF(EMPNO, ENAME, DEPTNO) values(1000,'홍길동',10); 
+insert into EMP_REF(EMPNO, ENAME, DEPTNO) values(1000,'홍길동',10);
 select * from EMP_REF;
-insert into EMP_REF(EMPNO, ENAME, DEPTNO) values(1002,'마길동',20); 
+insert into EMP_REF(EMPNO, ENAME, DEPTNO) values(1002,'마길동',20);
 /* 숙제
 참조키 관계에 있는 테이블 구성하기 
 메인테이블  student_main(id, pass, name) :아이디, 패스워드, 이름
@@ -90,6 +89,34 @@ insert into EMP_REF(EMPNO, ENAME, DEPTNO) values(1002,'마길동',20);
   student_main 과 student_point  id로  foreign key 관계를 설정하고,
   student_main에 데이터가 있어야만 student_point를 입력할 수 있게끔 처리
 */
+
+
+CREATE TABLE student_main
+(
+   ID VARCHAR2(20) PRIMARY KEY,
+   PASS VARCHAR2(20),
+   NAME  VARCHAR2 (50)
+);
+SELECT * FROM STUDENT_MAIN;
+SELECT * FROM STUDENT_POINT;
+INSERT INTO STUDENT_MAIN VALUES('C001001','7777','홍길동');
+INSERT INTO STUDENT_MAIN VALUES('C001002','7777','신길동');
+INSERT INTO STUDENT_MAIN VALUES('C001003','7777','마길동');
+ 
+
+CREATE TABLE STUDENT_POINT(
+	ID VARCHAR2(20) REFERENCES STUDENT_MAIN(ID),
+	subject VARCHAR2(50),
+	POINT NUMBER
+);
+-- 에러발생
+INSERT INTO STUDENT_POINT VALUES('C001004','국어',70);
+INSERT INTO STUDENT_POINT VALUES('C001004','영어',80);
+INSERT INTO STUDENT_POINT VALUES('C001004','수학',90);
+SELECT * FROM STUDENT_MAIN A, STUDENT_POINT B
+WHERE A.ID = B.ID;
+
+
 /*
 check 제약 조건
 입력된는 값을 체크하여 설정된 값 이외의 값이 들어오지 못하게 조건을 설정하는 것을 말한다.
@@ -103,8 +130,3 @@ create table emp04(
 );
 insert into emp04 values(9998,'신길동','D');
 select * from emp04;
-
-
-
-
-
