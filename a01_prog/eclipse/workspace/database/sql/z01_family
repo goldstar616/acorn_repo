@@ -1,0 +1,44 @@
+CREATE TABLE FAMILY
+(
+   NUMID         NUMBER,
+   PARENTNUMID   NUMBER,
+   ROLE01        VARCHAR2 (100),
+   NAME          VARCHAR2 (500)
+);
+NSERT INTO FAMILY (NUMID,
+                    PARENTNUMID,
+                    ROLE01,
+                    NAME)
+     VALUES (1,
+             0,
+             'ÇÒ¾Æ¹öÁö',
+             'È«±æµ¿');
+
+INSERT INTO FAMILY (NUMID,
+                    PARENTNUMID,
+                    ROLE01,
+                    NAME)
+     VALUES (2,
+             1,
+             '¾Æ¹öÁö',
+             'È«Á¤±æ');
+
+INSERT INTO FAMILY (NUMID,
+                    PARENTNUMID,
+                    ROLE01,
+                    NAME)
+     VALUES (3,
+             2,
+             '¾Æµé',
+             'È«ÇöÈ£');
+
+INSERT INTO FAMILY (NUMID,
+                    PARENTNUMID,
+                    ROLE01,
+                    NAME)
+     VALUES (4,
+             1,
+             '»ïÃÌ',
+             'È«Á¤È£');
+
+COMMIT;
