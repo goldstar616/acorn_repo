@@ -25,11 +25,13 @@
 create table emp_idx_exp as select * from emp;
 2. 인덱스 처리할 컬럼 지정.
 emp_idx_exp에서 empno를 index로 지정
-3. 인덱스 생성(해당 테이블에 인덱스 매핑)
+3. ##인덱스 생성(해당 테이블에 인덱스 매핑)
 create index 인덱스이름
-on 생성할테이블명(생성대상컬럼)
+on 생성할테이블명(생성대상컬럼 오름차순(DEFAULT)|내림차순)
+TABLESPACE 테이블스페이스명
 create index index_empno_emp_idx_exp
-on emp_idx_exp(empno);
+on emp_idx_exp(empno ASC)
+TABLESPACE EXP_TAB_SPACE;
 */
 CREATE TABLE EMP_IDX_EXP
 AS SELECT * FROM EMP;
@@ -54,3 +56,13 @@ CREATE INDEX IDX_DEPTNO_DEPT
 ON DEPT_IDX_EXP(DEPTNO);
 
 DROP INDEX IDX_DEPTNO_DEPT;
+
+/*
+로컬파일을 WORKSHEET에서 활용하기
+WORKSHEET(오라클서버)
+@@@.SQL(로컬/SVN서버)
+1. 로컬파일 내용 COPY해서 다른 문서 툴에 붙여넣기
+2. 새 WORKSHEET 생성
+3. 로딩할 파일명으로 새로운 WORKSHEET 파일명을 저장
+4. COPY해놓은 내용을 파일명으로 저장된 WORKSHEET에 복사해서 저장
+*/

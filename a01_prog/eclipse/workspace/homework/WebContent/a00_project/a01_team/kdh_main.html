@@ -8,7 +8,7 @@
 	@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 	body {font-family: 'Indie Flower', cursive;}
 	
-	#container{height:1200px; background-size:cover; background-image:url("/background/img_16.jpg");}
+	#container{height:1200px; background-size:cover; background-image:url("/homework/a00_project/a01_team/background/img_16.jpg");}
 	a{text-decoration:none}
 </style>
 
@@ -45,13 +45,14 @@
 			var check = confirm("Do you want to see my team member?");
 			if(check){
 				alert("Ok, let's go~")
+				window.location.href = "main.html";
 			}else{
 				alert("See more my Webpage, Thank you :)")
 			}
 	};
 	
 	window.onload = function(){
-		var background_img = "/background/img_"; 
+		var background_img = "/homework/a00_project/a01_team/background/img_"; 
 		var number = Math.floor(Math.random() * 16) + 1;
 		var container = document.getElementById("container");
 		
@@ -71,12 +72,12 @@
 				<div class="upper">
 						
 						<div id="aboutMe" class="uplist"> 
-							<a href="kdh_aboutme.html" target="bodyText" > about me</a>
+							<a href="kdh_aboutme.html" target="bodyText" > About Me</a>
 						</div>
 
 						<div id="contactMe" class="uplist">
-							<a href="kdh_contactme.html" target="bodyText">
-									contact me
+							<a href="kdh_contactme2.html" target="bodyText">
+									Contact Me
 							</a>
 						</div>
 							
@@ -86,14 +87,14 @@
 							</a> 
 						</div>
 						
-						<div id="toMain" class="uplist" onclick="goMain()"> Team member </div> <!-- 메인페이지 이동 --> 
+						<div id="toMain" class="uplist" onclick="goMain()"> Team members </div> <!-- 메인페이지 이동 --> 
 						
 				</div>
 			</div>
 			<hr>
 			
 			<div class="body" id="content"> <!-- 하단 공간 분할 // 본문내용 표시 공간 -->
-				<iframe id="iFrame" style="border:0px;" name="bodyText" src="kdh_main2.html">
+				<iframe id="iFrame" style="border:0px;" name="bodyText" src="kdh_main3.html">
 					<!--<h1 style="color:white;"	align="center;"	>-->
 					<!--	이곳은 김동휘의 홈페이지 입니다 <br><br>-->
 						
