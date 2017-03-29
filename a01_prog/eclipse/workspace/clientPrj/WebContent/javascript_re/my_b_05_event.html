@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script src="http://code.jquery.com/jquery-3.2.0.js">
+</script>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$('h1').on("mouseover",function()
+		{
+			$(this).css("background","green");
+			$(this).html("글자도 바꿀 수 있네요");
+		});
+		$('h1').on("mouseout",function()
+		{
+			$(this).css("background","yellow");
+			$(this).html("이벤트는 어떻게 되죠");
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>이벤트는 어떻게 되죠</h1>
+</body>
+</html>

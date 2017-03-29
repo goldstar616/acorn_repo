@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+/*
+ * 화면 로딩시 전체 body에 있는 객체 인식
+ * window.onload
+ * window.onload = func - load 이후 처리
+ */
+	window.onload=function()
+	{
+		// body 전체 load해서 tag 객체 불러온 후 처리
+		var headObj=document.getElementById("header")
+		headObj.style.backgroundColor="yellow";
+		headObj.onclick = function()
+		{
+			alert("클릭합니다");
+		};
+	};
+</script>
+</head>
+<body>
+	<h1 id="header">안녕하세요</h1>
+</body>
+</html>
