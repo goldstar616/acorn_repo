@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+@font-face {
+ font-family: 'NanumBarunGothic';
+ font-style: normal;
+ font-weight: 700;
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+ src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') 
+ 		format('embedded-opentype'), 
+ 		url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') 
+ 		format('woff'), 
+ 		url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') 
+ 		format('truetype');
+}
+
+div{box-sizing: border-box;}
+
+/*
+연한 기본색 (112, 199, 206) #70c7ce
+진한 기본색 (47, 174, 183) #2faeb7
+연한 hover색 (191, 231, 234) #bfe7ea
+진한 hover색 (116, 213, 220) #74d5dc
+*/
+
+body{ /* height:1000px; */ 
+	margin:0px;}
+.pin{height:50px; float:left; box-shadow:0 2px 1px #9c9c9c; 
+	background-image:linear-gradient(#2faeb7, #70c7ce);
+	background-color:#70c7ce; z-index:10;}
+.menu{padding-top:15px; padding-left:10px; padding-right:10px; width:150px; 
+		height:50px; float:left; text-align:center; text-decoration:none;
+	    text-shadow:0 1px 0 #000; color:white;
+	    font-family:'NanumBarunGothic', sans-serif;
+	    font-size:16px; font-weight:700;}
+
+.menu:hover{background-color:#bfe7ea; background-image:linear-gradient(#74d5dc, #bfe7ea);}
+		
+.logo{padding-left:30px; padding-right:30px; background-color:white; 
+	width:200px; height:50px; float:left; text-align:center;}
+
+.slider-container{height:500px; background-image: url("../img/daom1.jpg");}
+
+.info-container{width:50%; height:350px; float:left; display:inline-block;
+				background-color:#f8bc1c;}
+
+.info{width:350px; height:250px; margin-top:50px; margin-left:auto; margin-right:auto; 
+	background-color:#f8bc1c; border-radius:5px; box-shadow:10px 5px 10px #9c9c9c;}
+
+.info-top{height:20%; border-radius:5px 5px 0 5px; border-left:5px solid black;
+			border-top:5px solid black; border-right:5px solid black;}
+.info-middle{height:60%;}
+.info-bottom{height:20%; border-radius:0 5px 5px 5px; border-left:5px solid black;
+			border-bottom:5px solid black; border-right:5px solid black;}
+
+.resize-width{width:100%;}
